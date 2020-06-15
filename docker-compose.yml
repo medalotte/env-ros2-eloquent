@@ -1,0 +1,13 @@
+version: '3.0'
+services:
+  docker-eloquent:
+    container_name: 'docker-eloquent'
+    hostname: 'docker-eloquent'
+    build: ./
+    working_dir: /mnt
+    volumes:
+      - ./mnt:/mnt
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - $HOME/.Xauthority:/root/.Xauthority
+    environment:
+      - DISPLAY=$DISPLAY
