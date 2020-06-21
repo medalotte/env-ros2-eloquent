@@ -4,7 +4,9 @@ services:
     container_name: 'docker-eloquent'
     hostname: 'docker-eloquent'
     build: ./
+    working_dir: /root/
     volumes:
+      - ./ws:/root/ws
       - /tmp/.X11-unix:/tmp/.X11-unix
       - $HOME/.Xauthority:/root/.Xauthority
     environment:
