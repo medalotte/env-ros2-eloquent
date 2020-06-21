@@ -19,6 +19,6 @@ $ docker-compose build # process of dependencies installation included
 ### 3. run container and build pkgs
 
 ```shell
+$ xhost + local:root
 $ docker-compose run --rm docker-eloquent
-$ colcon build
 ```
