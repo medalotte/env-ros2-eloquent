@@ -17,6 +17,8 @@ ENV LANGUAGE ja_JP.UTF-8
 RUN apt update && apt install -y \
     curl \
     gnupg2 \
+    emacs \
+    tmux \
     lsb-release && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
@@ -30,12 +32,6 @@ RUN apt update && apt install -y \
     python3-colcon-common-extensions \
     python3-rosdep \
     python3-argcomplete && \
-    apt clean && \
-    rm -rf /var/lib/apt/lists/*
-
-RUN apt update && apt install -y \
-    emacs \
-    tmux && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
