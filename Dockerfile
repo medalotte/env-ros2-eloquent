@@ -29,6 +29,10 @@ RUN curl http://repo.ros2.org/repos.key | apt-key add - && \
 
 RUN apt update && apt install -y \
     ros-$ROS_DISTRO-desktop \
+    # ros-$ROS_DISTRO-turtlebot3* \ # https://github.com/ros-planning/navigation2/issues/1618, https://github.com/ROBOTIS-GIT/turtlebot3/issues/561
+    ros-$ROS_DISTRO-navigation2 \
+    ros-$ROS_DISTRO-nav2-bringup \
+    ros-$ROS_DISTRO-slam-toolbox \
     python3-colcon-common-extensions \
     python3-rosdep \
     python3-argcomplete && \
