@@ -41,3 +41,11 @@ RUN apt update && apt install -y \
 
 RUN rosdep init && rosdep update
 RUN echo "source /opt/ros/$ROS_DISTRO/setup.bash" >> ~/.bashrc
+
+WORKDIR /root/
+COPY src /root/src/
+RUN . /opt/ros/$ROS_DISTRO/setup.sh && \
+    apt update && rosdep install -q -y \
+    --from-paths /root/src \
+    --ignore-src \
+    && rm -rf /var/lib/apt/lists/*
