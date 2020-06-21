@@ -1,2 +1,2 @@
-/ws/*
-!/ws/src/.gitkeep
+ws/*/*
+!ws/src/.gitkeep
