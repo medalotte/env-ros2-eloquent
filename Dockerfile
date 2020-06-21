@@ -42,5 +42,6 @@ COPY ws/src /tmp/src/
 RUN . /opt/ros/$ROS_DISTRO/setup.sh && \
     apt update && rosdep install -q -y \
     --from-paths /tmp/src \
-    --ignore-src \
-    && rm -rf /var/lib/apt/lists/*
+    --ignore-src && \
+    apt clean && \
+    rm -rf /var/lib/apt/lists/*
